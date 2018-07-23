@@ -1,0 +1,662 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+a {
+  text-decoration: none; }
+
+@font-face {
+  font-family: "PT Sans";
+  src: url("../fonts/PT_Sans-Web-Regular.ttf");
+  font-weight: 400;
+  font-style: normal; }
+
+@font-face {
+  font-family: "PT Sans";
+  src: url("../fonts/PT_Sans-Web-Bold.ttf");
+  font-weight: 700;
+  font-style: normal; }
+
+@font-face {
+  font-family: "PT Sans";
+  src: url("../fonts/PT_Sans-Web-BoldItalic.ttf");
+  font-weight: 700;
+  font-style: italic; }
+
+@font-face {
+  font-family: "PT Sans Narrow";
+  src: url("../fonts/PT_Sans-Narrow-Web-Regular.ttf");
+  font-weight: 400;
+  font-style: normal; }
+
+@font-face {
+  font-family: "PT Sans Narrow";
+  src: url("../fonts/PT_Sans-Narrow-Web-Bold.ttf");
+  font-weight: 700;
+  font-style: normal; }
+
+@font-face {
+  font-family: "Roboto Condensed";
+  src: url("../fonts/RobotoCondensed-Bold.ttf");
+  font-weight: 700;
+  font-style: normal; }
+
+@font-face {
+  font-family: "Roboto";
+  src: url("../fonts/Roboto-Medium.ttf");
+  font-weight: 500;
+  font-style: normal; }
+
+.pt-sans, .page {
+  font-family: PT Sans;
+  font-style: normal;
+  font-weight: 400; }
+
+.pt-sans-bold, .page .header__leaf p span, .page .header__like p span, .page .popup-window__popup .popup-quesion p, .page .popup-window__popup .popup-quesion__circle p, .page .popup-window__popup .popup__btn, .page .pantomax-info__text span, .page .pantomax-advantages .products__items li p {
+  font-family: PT Sans;
+  font-style: normal;
+  font-weight: 700; }
+
+.pt-sans-bold-italic, .page .pantomax-advantages .doctor-inform__name {
+  font-family: PT Sans;
+  font-style: italic;
+  font-weight: 700; }
+
+.pt-sans-narrow, .page .discont__tittle, .page .order-product__rectangles li:last-child p, .page .order-form__price .full-price p, .page .order-form__price .sale-price p, .page .order-form__price .full-price h4, .page .order-form .form__lock, .page .popup-window__title span:nth-child(2), .page .pantomax-advantages__title span {
+  font-family: PT Sans Narrow;
+  font-style: normal;
+  font-weight: 400; }
+
+.pt-sans-narrow-bold, .page .order-product__rectangles li p, .page .order-form__price .sale-price h4, .page .order-form .form .btn-group .btn:last-child, .page .popup-window__title, .page .pantomax-info__title, .page .pantomax-advantages__title, .page .pantomax-advantages__title span:last-child, .page .pantomax-advantages .doctor-inform__title {
+  font-family: PT Sans Narrow;
+  font-style: normal;
+  font-weight: 700; }
+
+.roboto-condensed-bold, .page .main-title {
+  font-family: Roboto Condensed;
+  font-style: normal;
+  font-weight: 700; }
+
+.roboto-medium, .page .product-info__title {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500; }
+
+.page {
+  max-width: 980px;
+  margin: 0 auto;
+  color: #f7f4f8;
+  background: #060606; }
+  .page .head-block {
+    background: url("../img/bg_1.png");
+    -webkit-background-size: contain;
+            background-size: contain;
+    background-repeat: no-repeat; }
+  .page .header {
+    padding-top: 23px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: start;
+    -webkit-justify-content: flex-start;
+        -ms-flex-pack: start;
+            justify-content: flex-start; }
+    .page .header__logo {
+      cursor: pointer;
+      padding-right: 13%; }
+      .page .header__logo::before {
+        content: "";
+        background: url("../img/logo_1.png");
+        display: block;
+        height: 50px;
+        width: 44px; }
+      .page .header__logo::after {
+        content: "";
+        background: url("../img/logo__title.png");
+        display: block;
+        height: 44px;
+        width: 200px;
+        margin-top: -47px;
+        margin-left: 60px; }
+    .page .header__leaf {
+      margin-top: 12px;
+      position: relative;
+      padding-right: 9%; }
+      .page .header__leaf::before {
+        content: "";
+        background: url("../img/leaf.png");
+        display: block;
+        height: 37px;
+        width: 28px;
+        position: absolute;
+        left: -32px;
+        top: -15px; }
+      .page .header__leaf p {
+        font-size: 18px; }
+        .page .header__leaf p span {
+          font-size: 24px; }
+    .page .header__like {
+      margin-top: 12px;
+      position: relative; }
+      .page .header__like::before {
+        content: "";
+        background: url("../img/like.png");
+        display: block;
+        height: 36px;
+        width: 41px;
+        position: absolute;
+        left: -51px;
+        top: -6px; }
+      .page .header__like p {
+        font-size: 18px; }
+        .page .header__like p span {
+          font-size: 24px; }
+  .page .main-title {
+    font-size: 60px;
+    color: #eadb8d;
+    margin-top: 28px;
+    text-transform: uppercase; }
+  .page .header-info {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex; }
+  .page .product-info {
+    width: 32%; }
+    .page .product-info__title {
+      font-size: 22px;
+      margin-top: 15px;
+      margin-bottom: 10px; }
+    .page .product-info__items {
+      position: relative; }
+      .page .product-info__items li {
+        padding-left: 35px;
+        padding-top: 11px;
+        padding-bottom: 15px; }
+      .page .product-info__items li::before {
+        content: "";
+        background: url("../img/checked.png");
+        display: block;
+        height: 24px;
+        width: 24px;
+        position: absolute;
+        left: 0; }
+      .page .product-info__items_line {
+        background-image: -webkit-linear-gradient(40deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.3) 50%, rgba(255, 255, 255, 0));
+        background-image: -o-linear-gradient(40deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.3) 50%, rgba(255, 255, 255, 0));
+        background-image: linear-gradient(50deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.3) 50%, rgba(255, 255, 255, 0));
+        background-repeat: no-repeat;
+        background-position: 50% 100%;
+        -webkit-background-size: 100% 2px;
+                background-size: 100% 2px; }
+  .page .discont {
+    width: 38%;
+    position: relative; }
+    .page .discont img {
+      position: absolute;
+      top: 371px;
+      left: 53px; }
+    .page .discont__tittle {
+      font-size: 19px;
+      text-align: center;
+      margin-top: 479px; }
+  .page .order-product {
+    margin-top: 22px; }
+    .page .order-product__rectangles {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex; }
+      .page .order-product__rectangles li {
+        width: 48px;
+        height: 55px;
+        background: #f7f4f8;
+        -webkit-border-radius: 5px;
+                border-radius: 5px;
+        margin-right: 4px;
+        position: relative;
+        padding-left: 2px; }
+        .page .order-product__rectangles li:first-child {
+          background: rgba(255, 255, 255, 0.5); }
+          .page .order-product__rectangles li:first-child p {
+            color: rgba(0, 0, 0, 0.5); }
+        .page .order-product__rectangles li p {
+          color: #060606;
+          font-size: 50px;
+          text-align: center; }
+        .page .order-product__rectangles li div {
+          position: absolute;
+          border-top: 2px solid #cecece;
+          width: 44px;
+          top: 26px; }
+        .page .order-product__rectangles li:last-child {
+          width: 130px;
+          margin-top: 10px;
+          margin-left: 5px;
+          background: rgba(0, 0, 0, 0.5); }
+          .page .order-product__rectangles li:last-child p {
+            font-size: 19px;
+            text-align: left;
+            color: #f7f4f8;
+            padding-left: 15px; }
+            .page .order-product__rectangles li:last-child p span {
+              padding-left: 8px; }
+  .page .order-form {
+    position: relative;
+    margin-top: 30px; }
+    .page .order-form img {
+      position: absolute;
+      top: -37px;
+      left: -37px;
+      z-index: 1; }
+    .page .order-form__price {
+      position: absolute;
+      z-index: 2;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: justify;
+      -webkit-justify-content: space-between;
+          -ms-flex-pack: justify;
+              justify-content: space-between;
+      margin-top: 22px;
+      margin-left: 20px; }
+      .page .order-form__price .full-price {
+        color: rgba(255, 255, 255, 0.5); }
+      .page .order-form__price .full-price p, .page .order-form__price .sale-price p {
+        font-size: 18px;
+        margin-bottom: 5px; }
+      .page .order-form__price .full-price h4, .page .order-form__price .sale-price h4 {
+        font-size: 48px; }
+      .page .order-form__price .full-price h4 span {
+        font-size: 24px; }
+      .page .order-form__price .sale-price {
+        margin-left: 25px; }
+      .page .order-form__price .sale-price h4 span {
+        font-size: 24px; }
+    .page .order-form .line {
+      position: absolute;
+      border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+      width: 87px;
+      top: 51px; }
+    .page .order-form .form {
+      position: absolute;
+      z-index: 2;
+      top: 135px;
+      left: 20px; }
+      .page .order-form .form-control {
+        width: 255px;
+        height: 55px;
+        font-size: 14px;
+        background: #f6f6f6; }
+      .page .order-form .form .btn-group {
+        margin-top: 8px; }
+        .page .order-form .form .btn-group .btn {
+          height: 65px;
+          border: none; }
+          .page .order-form .form .btn-group .btn:first-child {
+            width: 50px;
+            background: #b13412;
+            position: relative; }
+            .page .order-form .form .btn-group .btn:first-child::before {
+              content: "";
+              background: url("../img/btn1.png");
+              display: block;
+              height: 18px;
+              width: 10px;
+              position: absolute;
+              left: 20px;
+              top: 20px; }
+          .page .order-form .form .btn-group .btn:last-child {
+            width: 205px;
+            background: #e04218;
+            padding-right: 40px;
+            font-size: 22px;
+            color: #f7f4f8; }
+      .page .order-form .form__lock {
+        color: #060606;
+        font-size: 15px;
+        position: relative;
+        margin-top: 28px;
+        margin-left: 33px; }
+        .page .order-form .form__lock::before {
+          content: "";
+          background: url("../img/lock.png");
+          display: block;
+          height: 17px;
+          width: 13px;
+          position: absolute;
+          left: -18px;
+          top: -3px; }
+  .page .popup-window {
+    width: 100%;
+    padding-top: 60px;
+    background: url("../img/bg_2.png") top;
+    -webkit-background-size: contain;
+            background-size: contain;
+    background-repeat: no-repeat; }
+    .page .popup-window__title {
+      font-size: 48px;
+      color: #f7f4f8;
+      text-transform: uppercase;
+      text-align: center; }
+      .page .popup-window__title span {
+        color: #c93a16; }
+        .page .popup-window__title span:nth-child(2) {
+          color: #f7f4f8; }
+    .page .popup-window__text {
+      font-size: 22px;
+      text-align: center;
+      margin-top: 18px;
+      margin-bottom: 30px; }
+    .page .popup-window__popup {
+      margin: 0 auto;
+      -webkit-border-radius: 10px;
+              border-radius: 10px;
+      height: 260px;
+      width: 65%;
+      background: #f7f4f8;
+      padding-top: 20px; }
+      .page .popup-window__popup .popup-quesion {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: center;
+        -webkit-justify-content: center;
+            -ms-flex-pack: center;
+                justify-content: center; }
+        .page .popup-window__popup .popup-quesion p {
+          color: #060606;
+          font-size: 24px;
+          padding-top: 11px; }
+        .page .popup-window__popup .popup-quesion__circle {
+          width: 60px;
+          height: 60px;
+          -webkit-border-radius: 50%;
+                  border-radius: 50%;
+          background: #e5e5e5;
+          margin-right: 20px; }
+          .page .popup-window__popup .popup-quesion__circle p {
+            color: #060606;
+            text-align: center;
+            font-size: 30px; }
+      .page .popup-window__popup .popup {
+        width: 100%;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: center;
+        -webkit-justify-content: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+        margin-top: 40px; }
+        .page .popup-window__popup .popup__btn {
+          height: 80px;
+          width: 250px;
+          text-transform: uppercase;
+          font-size: 24px;
+          color: #f7f4f8;
+          position: relative;
+          background: transparent;
+          margin-right: 20px; }
+          .page .popup-window__popup .popup__btn p {
+            z-index: 2;
+            position: absolute;
+            padding-left: 50px;
+            top: 25px; }
+          .page .popup-window__popup .popup__btn::before {
+            content: "";
+            background: url("../img/btn_2.png");
+            display: block;
+            height: 80px;
+            width: 250px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            z-index: 1; }
+  .page .pantomax-info {
+    width: 100%;
+    -webkit-border-radius: 10px;
+            border-radius: 10px;
+    background: url("../img/bg_3.png");
+    -webkit-background-size: cover;
+            background-size: cover;
+    background-repeat: no-repeat;
+    margin-top: 68px;
+    padding-left: 40px;
+    padding-bottom: 40px; }
+    .page .pantomax-info__title {
+      padding-top: 35px;
+      color: #060606;
+      text-transform: uppercase;
+      font-size: 48px;
+      margin-bottom: 30px; }
+      .page .pantomax-info__title span {
+        color: #fc481a; }
+    .page .pantomax-info__text {
+      color: #060606;
+      font-size: 17px; }
+      .page .pantomax-info__text span {
+        text-transform: uppercase; }
+  .page .pantomax-advantages__title {
+    text-align: center;
+    margin-top: 60px;
+    font-size: 48px;
+    text-transform: uppercase; }
+    .page .pantomax-advantages__title span:last-child {
+      color: #fc481a; }
+  .page .pantomax-advantages .products {
+    position: relative; }
+    .page .pantomax-advantages .products::before {
+      content: "";
+      background: url("../img/product_b4.png");
+      display: block;
+      height: 525px;
+      width: 441px;
+      position: absolute;
+      left: -70px;
+      top: 70px; }
+    .page .pantomax-advantages .products::after {
+      content: "";
+      background: url("../img/bgckrnd_4.png");
+      -webkit-background-size: contain;
+              background-size: contain;
+      background-repeat: no-repeat;
+      display: block;
+      height: 416px;
+      width: 768px;
+      position: absolute;
+      left: -70px;
+      top: 243px;
+      z-index: -1; }
+    .page .pantomax-advantages .products__items {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-flex-wrap: wrap;
+          -ms-flex-wrap: wrap;
+              flex-wrap: wrap;
+      -webkit-box-pack: justify;
+      -webkit-justify-content: space-between;
+          -ms-flex-pack: justify;
+              justify-content: space-between;
+      margin-top: 25px;
+      margin-left: 330px; }
+      .page .pantomax-advantages .products__items li {
+        width: 203px;
+        height: 252px;
+        -webkit-border-radius: 10px;
+                border-radius: 10px;
+        margin-top: 15px; }
+        .page .pantomax-advantages .products__items li p {
+          color: black;
+          margin-top: -60px;
+          text-align: center; }
+  .page .pantomax-advantages .doctor-inform {
+    background: url("../img/bg_5.png");
+    -webkit-border-radius: 10px;
+            border-radius: 10px;
+    margin-top: 83px;
+    padding-top: 34px;
+    padding-left: 43px;
+    margin-bottom: 9px;
+    background-repeat: no-repeat;
+    -webkit-background-size: contain;
+            background-size: contain; }
+    .page .pantomax-advantages .doctor-inform__title {
+      font-size: 48px;
+      color: #060606;
+      text-transform: uppercase; }
+      .page .pantomax-advantages .doctor-inform__title span {
+        color: #fc481a; }
+    .page .pantomax-advantages .doctor-inform__text {
+      margin-top: 24px;
+      color: rgba(0, 0, 0, 0.7);
+      line-height: 1.2; }
+    .page .pantomax-advantages .doctor-inform__name {
+      color: black;
+      margin-top: 29px;
+      padding-bottom: 35px;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex; }
+      .page .pantomax-advantages .doctor-inform__name img {
+        margin-left: 45px;
+        margin-top: -23px; }
+
+@media (max-width: 1061px) {
+  .product-info {
+    margin-right: 299px; }
+  .discont {
+    display: none; } }
+
+@media (max-width: 970px) {
+  .page .main-title {
+    font-size: 55px; } }
+
+@media (max-width: 940px) {
+  .pantomax-advantages .products__items {
+    -webkit-justify-content: space-around !important;
+        -ms-flex-pack: distribute !important;
+            justify-content: space-around !important; } }
+
+@media (max-width: 890px) {
+  .doctor-inform {
+    background: white !important; } }
+
+@media (max-width: 855px) {
+  .page .main-title {
+    font-size: 50px; }
+  .popup__btn {
+    width: 150px !important;
+    background: #fc481a !important;
+    -webkit-border-radius: 10px !important;
+            border-radius: 10px !important; }
+    .popup__btn::before {
+      display: none !important; }
+    .popup__btn p {
+      font-size: 18px;
+      padding-left: 7px !important; } }
+
+@media (max-width: 774px) {
+  .page .header {
+    display: block; }
+    .page .header__leaf {
+      margin-left: 33px;
+      margin-top: 25px; }
+    .page .header__like {
+      margin-left: 53px;
+      margin-top: 15px; }
+  .page .main-title {
+    font-size: 40px; }
+  .page .pantomax-advantages .products::after {
+    display: none; }
+  .page .pantomax-advantages .products__items {
+    margin-left: 0;
+    padding-top: 650px; } }
+
+@media (max-width: 662px) {
+  .head-block {
+    margin-bottom: 500px; } }
+
+@media (max-width: 655px) {
+  .header-info {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column; }
+  .product-info {
+    margin-right: 0;
+    min-width: 100%;
+    text-align: center; }
+    .product-info__items {
+      width: 50%;
+      margin: 0 auto; }
+  .order-product {
+    margin: 0 auto; }
+  .pantomax-advantages .products__items {
+    -webkit-justify-content: space-around !important;
+        -ms-flex-pack: distribute !important;
+            justify-content: space-around !important; } }
+
+@media (max-width: 582px) {
+  .popup-window {
+    display: none; }
+  .pantomax-info {
+    background: white; }
+  .pantomax-advantages .products__items {
+    -webkit-box-pack: center !important;
+    -webkit-justify-content: center !important;
+        -ms-flex-pack: center !important;
+            justify-content: center !important; } }
+
+@media (max-width: 464px) {
+  .doctor-inform {
+    padding-top: 10px !important;
+    padding-left: 10px !important; } }

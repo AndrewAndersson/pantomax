@@ -1,0 +1,80 @@
+var gulp = require('gulp'),
+    sass = require('gulp-sass'),
+    browserSync = require('browser-sync'),
+    concat = require('gulp-concat'),
+    uglify = require('gulp-uglifyjs'),
+    del = require('del'),
+    imagemin = require('gulp-imagemin'),
+    pngquant = require('imagemin-pngquant'),
+    prefix = require('gulp-autoprefixer');
+
+
+gulp.task('sass', function() {
+    return gulp.src('app/sass/**/*.sass')
+        .pipe(sass())
+        .pipe(prefix({
+            browsers: ['last 10 versions'],
+            cascade: true
+        }))
+        .pipe(gulp.dest('app/css'))
+        .pipe(browserSync.reload({ stream: true }))
+});
+gulp.task('scripts', function() {
+    return gulp.src([
+            'app/libs/jquery/dist/jquery.min.js',
+            'app/libs/magnific-popup/dist/jquery.magnific-popup.min.js',
+            'app/libs/jquery.prettydropdowns.js',
+        ])
+        .pipe(concat('libs.min.js'))
+        .pipe(uglify())
+        .pipe(gulp.dest('app/js'));
+});
+
+
+gulp.task('browser-sync', function() {
+    browserSync({
+        server: {
+            baseDir: 'app'
+        },
+        notify: false
+    });
+});
+
+gulp.task('clean', function() {
+    return del.sync('dist');
+});
+
+gulp.task('img', function() {
+    return gulp.src('app/img/**/*')
+        .pipe(imagemin({
+            interlaced: true,
+            progressive: true,
+            svgoPlugins: [{ removeViewBox: false }],
+            use: [pngquant()]
+        }))
+        .pipe(gulp.dest('dist/img'));
+});
+
+gulp.task('watch', ['browser-sync', 'sass', 'scripts'], function() {
+    gulp.watch('app/sass/**/*.sass', ['sass']);
+    gulp.watch('app/*.html', browserSync.reload);
+    gulp.watch('app/js/**/*.js', browserSync.reload);
+});
+
+gulp.task('build', ['clean', 'img', 'sass', 'scripts'], function() {
+
+    var buildCss = gulp.src([
+            'app/css/main.css',
+            'app/css/libs.css'
+        ])
+        .pipe(gulp.dest('dist/css'));
+
+    var buildFonts = gulp.src('app/fonts/**/*')
+        .pipe(gulp.dest('dist/fonts'));
+
+    var buildJs = gulp.src('app/js/**/*')
+        .pipe(gulp.dest('dist/js'));
+
+    var buildHtml = gulp.src('app/*.html')
+        .pipe(gulp.dest('dist'));
+});
